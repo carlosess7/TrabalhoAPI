@@ -1,0 +1,52 @@
+Modelo de dados do cliente:
+id (Primary Key)
+código (Unique Key)
+nome
+
+
+Modelo de dados do endereço:
+id (Primary Key)
+clienteId (Foreign Key)
+índice
+logradouro
+número
+complemento
+cidade
+estado
+cep
+
+___________________________________________________________
+
+# API de Gerenciamento de Clientes e Endereços
+
+Esta é uma API construída em Node.js usando o framework Express para gerenciar clientes e seus endereços.
+
+## Pré-requisitos
+
+- Node.js e npm instalados na máquina.
+
+## Instalação
+
+1. Clone este repositório:
+git clone: (A fazer)
+
+
+2. Navegue até o diretório do projeto:
+
+3. Instale as dependências do projeto:
+npm install
+npm install express
+npm install jsonwebtoken
+
+4. Execute o servidor:
+node clientService.js
+
+## Uso
+
+A API fornece endpoints para gerenciar clientes e seus endereços. Abaixo estão os endpoints disponíveis:
+
+- **POST /api/v1/cliente**: Criar um novo cliente.
+- **GET /api/v1/cliente/{codigo}**: Obter um cliente específico pelo código.
+- **GET /api/v1/cliente**: Obter todos os clientes.
+- **POST /api/v1/cliente/{codigo}/endereco**: Adicionar um endereço a um cliente específico.
+- **GET /api/v1/cliente/{codigo}/endereco**: Obter o endereço de um cliente específico.
