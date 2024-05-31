@@ -244,3 +244,12 @@ Na colection Disponibilizada no Postman (API Node.js com Kong >> services/Routes
   "methods": ["GET"],
   "headers": null
 }
+
+
+___________________________________________________________________________________________________
+Container Kong:
+
+docker run --hostname=348250c87214 --user=kong --env=KONG_PG_HOST=kong-database --env=KONG_PG_PASSWORD=kongpass --env=KONG_ADMIN_ACCESS_LOG=/dev/stdout --env=KONG_PROXY_ERROR_LOG=/dev/stderr --env=KONG_ADMIN_ERROR_LOG=/dev/stderr --env=KONG_ADMIN_GUI_URL=http://localhost:8002 --env=KONG_DATABASE=postgres --env=KONG_PG_USER=kong --env=KONG_PROXY_ACCESS_LOG=/dev/stdout --env=KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=ASSET=ce --env=KONG_VERSION=3.6.1 --network=kong-net -p 8000:8000 -p 127.0.0.1:8001:8001 -p 127.0.0.1:8002:8002 -p 8443:8443 -p 127.0.0.1:8444:8444 --restart=no --label='maintainer=Kong Docker Maintainers <docker@konghq.com> (@team-gateway-bot)' --label='org.opencontainers.image.ref.name=ubuntu' --label='org.opencontainers.image.version=22.04' --runtime=runc -d kong:3.6.1
+
+
+docker run --hostname=0b6cc32fa6b5 --env=POSTGRES_USER=kong --env=POSTGRES_DB=kong --env=POSTGRES_PASSWORD=kongpass --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/postgresql/13/bin --env=GOSU_VERSION=1.17 --env=LANG=en_US.utf8 --env=PG_MAJOR=13 --env=PG_VERSION=13.15-1.pgdg120+1 --env=PGDATA=/var/lib/postgresql/data --volume=/var/lib/postgresql/data --network=kong-net -p 5432:5432 --restart=no --runtime=runc -d postgres:13
